@@ -29,4 +29,5 @@ class BaseModel
     {
         return $this->conn;
     }
+
 }

@@ -15,6 +15,28 @@
 </head>
 
 <body>
+   <?php if (isset($_SESSION['error']) && count($_SESSION[ 'error']) > 0): ?>
+<ul>
+<?php foreach ($_SESSION['error'] as $error): ?>
+< li>
+<span class="text-danger"><?= $error ?></span>
+</li>
+<?php endforeach; ?>
+</ul>
+<?php unset($_SESSION[' error']); ?>
+<?php
+endif; ?>
+<?php if (isset($_SESSION['success ']) && count($_SESSION[' success '])
+> 0): ?>
+<ul>
+<?php foreach ($_SESSION[' success'] as $success): ?>
+<li>
+<span class="text-success"><?= $success ?></span>
+</li>
+<?php endforeach; ?>
+</ul>
+<?php unset($_SESSION[' success ']); ?>
+<?php endif; ?>
 
     <nav class="navbar navbar-expand-md bg-light justify-content-center">
         <ul class="navbar-nav">
@@ -37,5 +59,4 @@
     </div>
 
 </body>
-
 </html>
